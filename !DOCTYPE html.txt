@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Uwaga! Ptoszek!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kliknij gdziekolwiek na stronie... 🐦</h1>
+
+    <script>
+        // Efekty uruchamiają się po pierwszym kliknięciu użytkownika
+        document.addEventListener('click', () => {
+            
+            // 1. Zmiana tytułu karty na zmianę
+            setInterval(() => {
+                document.title = document.title === "Ćwir!" ? "🐦 PTOSZEK!" : "Ćwir!";
+            }, 500);
+
+            // 2. Odtworzenie śmiesznego dźwięku lub muzyki
+            let audio = new Audio('https://www.w3schools.com/html/horse.ogg'); // Tutaj podajesz link do swojego dźwięku
+            audio.loop = true;
+            audio.play();
+
+            // 3. Wyskakujące okienko (pop-up)
+            alert("Zostałeś zptoszkowany!");
+
+            // 4. Automatyczne pobranie śmiesznego obrazka
+            let link = document.createElement('a');
+            link.href = 'link_do_twojego_obrazka.jpg';
+            link.download = 'ptoszek.jpg';
+            link.click();
+        });
+    </script>
+</body>
+</html>
